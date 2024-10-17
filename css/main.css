@@ -1,0 +1,609 @@
+/* Juliette CSS */
+
+.indivContainer{
+  display: flex;
+  align-items: center;
+  background-color: #232531;
+  padding-top: 3em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 3em;
+}
+
+.indivContainer img{
+  width: 425px;
+  height: auto;
+}
+
+.movieImg{
+  margin-right: 5em;
+}
+
+.movieText{
+  flex: 1;
+}
+
+.h8{
+  color: #ffffff;
+  font-size: 48px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.miniText{
+  display: flex;
+  align-items: flex-start;
+}
+
+.h6{
+  width: 150px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-weight: bold;
+  
+}
+
+.hAPI{
+  width: 38em;
+  color: #e1e1e1;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-weight: 10;
+}
+
+.h6, .hAPI {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.h3{
+  color: #ffffff;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+.playButton{
+  color: #784DF4;
+}
+
+.playButton img{
+  width: 10px;
+  height: auto;
+}
+
+.playButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: #784DF4;
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.playButton img {
+  width: 12px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.playButton p.h3 {
+  margin: 0;
+  font-size: inherit;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+width: auto;
+height: auto;
+}
+
+nav {
+margin: 0;
+font-family: Arial, sans-serif;
+
+}
+
+.navbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #23253181;
+padding: 10px 55px;
+}
+
+.navbar .logo {
+display: flex;
+align-items: center;
+}
+
+.navbar .logo img {
+width: auto;
+height: 60px;
+padding-left: 10px;
+}
+
+.navbar a{
+text-align: left;
+}
+
+.nav-links a {
+padding-right: 20px;
+}
+
+.navbar .nav-links a {
+color: #ffffff;
+font-size: 24px;
+ font-family: "Poppins", sans-serif;
+ font-weight: 300;
+ font-style: normal;
+ text-decoration: none;
+}
+
+.navbar .nav-links a.active {
+color: #ffffff;
+font-size: 24px;
+font-family: "Poppins", system-ui;
+font-weight: 700;
+font-style: normal;
+text-decoration: none;
+}
+
+.navbar .nav-icons {
+display: flex;
+align-items: center;
+gap: 20px;
+padding-right: 10px;
+}
+
+.navbar .nav-icons i {
+color: white;
+font-size: 20px;
+padding-right: 10px;
+}
+
+.navbar .nav-icons .language {
+font-size: 16px;
+font-weight: bold;
+color: white;
+padding-right: 10px;
+}
+
+.navIconSearch{
+width: 30px;
+height: auto;
+padding-right: 10px;
+}
+
+.navIconProfile{
+width: 30px;
+height: auto; 
+padding-right: 10px;
+}
+
+
+
+.bottemNavbar {
+height: auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #2325315b;
+padding: 10px 55px;
+}
+
+.bottemNavbar .bottemLogo {
+display: flex;
+align-items: center;
+}
+
+.bottemNavbar .bottemLogo img {
+width: auto;
+height: 100px;
+padding-left: 10px;
+}
+
+.bottemNavbar a{
+text-align: left;
+}
+
+.bottemNav-links a {
+padding-right: 20px;
+}
+
+.bottemNavbar .bottemNav-links a {
+color: #ffffff;
+font-size: 24px;
+ font-family: "Poppins", sans-serif;
+ font-weight: 300;
+ font-style: normal;
+ text-decoration: none;
+}
+
+.bottemNavbar .bottemNav-links a.active {
+color: #ffffff;
+font-size: 24px;
+font-family: "Poppins", system-ui;
+font-weight: 700;
+font-style: normal;
+text-decoration: none;
+}
+
+.bottemNavbar .bottemNav-icons {
+display: flex;
+align-items: center;
+gap: 20px;
+padding-right: 10px;
+}
+
+.bottemNavbar .bottemNav-icons i {
+color: white;
+font-size: 20px;
+padding-right: 10px;
+}
+
+.bottemNavbar .bottemNav-icons .bottemLanguage {
+font-size: 16px;
+font-weight: bold;
+color: white;
+padding-right: 10px;
+}
+
+.bottemNavIconSearch{
+width: 30px;
+height: auto;
+padding-right: 10px;
+}
+
+.bottemNavIconProfile{
+width: 30px;
+height: auto; 
+padding-right: 10px;
+}
+
+/*ANDRE*/
+/*sign in*/
+
+.sign-inBody{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(../assets/lodin\ back.jpg) no-repeat;
+  background-position: center;
+}
+
+  .innerBlock{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(35, 37, 50, 100);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 30px 40px;
+  }
+
+  .innerBlock .input-box{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    margin: 30px 0;
+  }
+
+  .innerBlock .signInLogo{
+    display: block;
+    margin-left: 70px;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    color: #BAB6B6;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px 45px 20px 20px;
+  }
+  
+
+  .input-box input::placeholder {
+    color: #BAB6B6;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(186, 182, 182);
+  }
+
+  .innerBlock .log-in{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 45px;
+    background: #784DF4;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .innerBlock .sign-upLink{
+    color: #333;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin: 20px 0 15px;
+  }
+
+  .sign-upLink p a {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+  }
+
+  .sign-upLink p a:hover{
+    text-decoration: underline;
+  }
+  
+  .welcomeHeader{
+    color: #ffffff;
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+  }
+
+  .logInBtnText{
+    color: #ffffff;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+
+
+       /*sign up*/
+
+       .sign-upBody{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background: url(../assets/lodin\ back.jpg) no-repeat;
+          background-position: center;
+          width: auto;
+          height: a;
+        }
+  
+        .signUpText{
+          color: #ffffff;
+          font-size: 40px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-style: normal;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+        }
+  
+       .innerBlock .input-boxSignUp{
+          width: 100%;
+          height: 50px;
+          background: transparent;
+          margin: 30px 0;
+        }
+        
+       .input-boxSignUp input{
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          border: none;
+          outline: none;
+          border-radius: 40px;
+          color: #BAB6B6;
+          font-size: 22px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          padding: 20px 45px 20px 20px;
+        }
+        
+      
+        .input-boxSignUp input::placeholder {
+          color: #BAB6B6;
+          font-size: 22px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          box-sizing: border-box;
+          border: none;
+          border-bottom: 2px solid rgb(186, 182, 182);
+        }
+  
+        .innerBlock .signUp{
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+          height: 45px;
+          background: #784DF4;
+          border: none;
+          outline: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+  
+        .SignUpBtnText{
+          color: #ffffff;
+          font-size: 22px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        /*WATCH LIST*/
+
+        .WatchListBody{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      
+          background: url(../assets/lodin\ back.jpg) no-repeat;
+          background-position: center;
+          height: auto;
+          width: auto;
+        }
+
+        h12{
+          color: #ffffff;
+          font-size: 24px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          }
+
+        .movie-card {
+          width: 500px;
+          height: auto;
+          margin: 10px;
+          border: 1px ;
+          border-radius: 10px;
+          overflow: hidden;
+          background-color: #23253181;
+          color: white;
+          position: relative;
+          border: 2px solid rgba(35, 37, 50, 100);
+          
+      }
+
+      .movie-card img {
+          width: 100%;
+          height: auto;
+          background-color: #f8d5d5;
+          object-fit: cover;
+          border-bottom: 2px solid rgba(35, 37, 50, 100) ;
+      }
+
+      .movie-card .info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+        text-align: center;
+      }
+
+      .remove-btn {
+          background-color: #c1f700;
+          border: none;
+          padding: 5px 10px;
+          font-weight: bold;
+          border-radius: 20px;
+          cursor: pointer;
+          color: #333;
+          font-size: 16px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+      }
+
+      .details {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 15px;
+          font-size: 0.85rem;
+          color: #ffffff;
+          font-size: 16px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+      }
+
+  /*Iwan CSS*/
+
+.section1{
+  background: url(../assets/lodin\ back.jpg) no-repeat; 
+  padding-bottom: 50px;
+}
+
+.MovieListBody{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  height: auto;
+  width: auto;
+}
+
+.line{
+    margin: 50px 90px;
+    height: 5px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.addWatchListBtn {
+  background-color: #784DF4;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.carouselDescription {
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 50px;
+}
+
+
