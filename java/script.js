@@ -124,4 +124,3 @@ const options = {
   fetchTrendingMovies();
   fetchPopularMovies();
   fetchPremiereMovies();
-  
