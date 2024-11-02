@@ -1,3 +1,5 @@
+import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*renderWatchList*/ } from './watchlist.js';
+
 /**
     The home.js file provides JavaScript functionality to be used for the Home.html page of a movie streaming application. 
     It includes several functions that interact with the Movie API to load movie data dynamically and update the UI.
@@ -26,27 +28,23 @@
  */
 let isPlaying = true;
 
+/** @type {MovieDetails[]} */
+let globalTopThreeMovies = [];
+
 const carouselElement = document.querySelector('#mainCarousel');
-const toggleButton = document.querySelector('#toggleCarousel');
-const toggleIcon = document.querySelector('#toggleIcon');
-const carouselInstance = new bootstrap.Carousel(carouselElement);
+const playTrailerButton = document.querySelector('#toggleCarousel');
+
 
 /**
- * Toggles between play and pause states of the carousel.
+ * Plays the trailer for the currently active slide.
  */
-const togglePlayPause = () => {
-    if (isPlaying) {
-        carouselInstance.pause();
-        toggleIcon.src = '../assets/PlayButton.svg';
-    } else {
-        carouselInstance.cycle();
-        toggleIcon.src = '../assets/PauseButton.svg';
-    }
-    isPlaying = !isPlaying;
-};
+const playTrailer = () => {
+    const activeSlide = carouselElement.querySelector('.carousel-item.active');
+    const activeSlideIndex = Array.from(carouselElement.querySelector('.carousel-inner').children).indexOf(activeSlide);
 
-// If it is playing, then pause, otherwise play.
-toggleButton.addEventListener('click', togglePlayPause);
+    const trailerUrl = globalTopThreeMovies[activeSlideIndex].trailer;
+    window.open(trailerUrl, '_blank');
+};
 
 /**
  * Loads the top three premiere movies into the carousel.
@@ -54,11 +52,12 @@ toggleButton.addEventListener('click', togglePlayPause);
  */
 async function loadTopRatedMovies() {
     const premiereMovies = await window.fetchPremiereMovies();
-    const topThreeMovies = premiereMovies.slice(0, 3);
+    const topThreeMoviePromises = premiereMovies.slice(0, 3).map(movie => window.fetchMovieDetails(movie.id, true, true));
+    globalTopThreeMovies = await Promise.all(topThreeMoviePromises);
     const carouselIndicators = document.querySelector('.carousel-indicators');
     const carouselInner = document.querySelector('.carousel-inner');
 
-    topThreeMovies.forEach((movie, index) => {
+    globalTopThreeMovies.forEach((movie, index) => {
         const newCarouselItem = createCarouselItem(movie, index === 0);
         carouselInner.appendChild(newCarouselItem);
         
@@ -75,8 +74,6 @@ async function loadTopRatedMovies() {
         carouselIndicators.appendChild(indicatorButton);
     });
 }
-
-loadTopRatedMovies();
 
 /**
  * Creates a carousel item element.
@@ -123,10 +120,23 @@ function createCarouselItem(movie, isActive) {
         watchNowButton.className = 'watch-now';
         watchNowButton.textContent = 'Watch Now';
 
+        const inWatchList = isInWatchList(movie.id);
         // Create the "+ Watch List" button
         const watchLaterButton = document.createElement('button');
         watchLaterButton.className = 'watch-later';
-        watchLaterButton.textContent = '+ Watch List';
+        watchLaterButton.textContent = inWatchList ? 'Remove' : '+ Watch list';
+        watchLaterButton.setAttribute('data-id', movie.id);
+        
+        watchLaterButton.onclick = function () {
+            if (isInWatchList(movie.id)) {
+                removeFromWatchList(movie.id);
+                watchLaterButton.textContent = '+ Watch list';
+            } else {
+                addToWatchList(movie.id);
+                watchLaterButton.textContent = 'Remove';
+            }
+            updateWatchListButtons();
+        };
 
         // Append buttons to the button group
         movieButtonGroup.appendChild(watchNowButton);
@@ -158,11 +168,9 @@ function createCarouselItem(movie, isActive) {
  * @returns {HTMLElement} The movie card element.
  */
 function createMovieCard(movie, showFullDate = false) {
-    const colDiv = document.createElement('div');
-    colDiv.className = 'col-md-3';
 
     const cardDiv = document.createElement('div');
-    cardDiv.className = 'card';
+    cardDiv.className = 'card col-sm-3';
 
     const img = document.createElement('img');
     img.src = movie.poster;
@@ -200,10 +208,25 @@ function createMovieCard(movie, showFullDate = false) {
     cardDetails.appendChild(movieYear);
     cardDetails.appendChild(movieRating);
 
+    const inWatchList = isInWatchList(movie.id);
     const cardLink = document.createElement('button');
-    cardLink.href = '#';
-    cardLink.className = 'movie-btn';
-    cardLink.textContent = '+ Watch list';
+    cardLink.className = `movie-btn${inWatchList ? ' remove' : ''}`;
+    cardLink.textContent = inWatchList ? 'Remove' : '+ Watch list';
+    cardLink.setAttribute('data-id', movie.id);
+
+    cardLink.onclick = function() {
+        if (isInWatchList(movie.id)) {
+            removeFromWatchList(movie.id);
+            cardLink.classList.remove('remove');
+            cardLink.textContent = '+ Watch list';
+        } else {
+            addToWatchList(movie.id);
+            cardLink.classList.add('remove');
+            cardLink.textContent = 'Remove';
+        }
+        // Update all buttons after adding/removing from watchlist
+        updateWatchListButtons();
+    };
 
     // Append all elements to card body and card div
     cardBody.appendChild(cardTitle);
@@ -211,9 +234,8 @@ function createMovieCard(movie, showFullDate = false) {
     cardBody.appendChild(cardDetails);
     cardDiv.appendChild(img);
     cardDiv.appendChild(cardBody);
-    colDiv.appendChild(cardDiv);
 
-    return colDiv;
+    return cardDiv;
 }
 
 
@@ -229,7 +251,7 @@ function toggleCategory(category) {
     const buttonId = category + 'Button';
     document.getElementById(buttonId).classList.add('active');
 
-    const movieCardsRow = document.getElementById('movieCardsRow');
+    const movieCardsRow = document.getElementById('movieContentContainer');
     movieCardsRow.innerHTML = ''; // Clear previous cards
 
     switch (category) {
@@ -253,7 +275,6 @@ function toggleCategory(category) {
             break;
     }
 }
-
 /**
  * Loads movies based on the selected category and displays them as cards. 
  * @param {string} title - The title to show for the row.
@@ -266,21 +287,128 @@ function addMoviesToRow(title, movies) {
     titleElement.className = 'category-title pb-4 mb-4';
     titleElement.textContent = title;
 
-    // Create a new row for the movies
-    const newMovieCardsRow = document.createElement('div');
-    newMovieCardsRow.className = 'row movie-cards-row list-container';
+    // Create a container div for the entire movie cards row with scrollbar
+    const newMovieCardsContainer = document.createElement('div');
+    newMovieCardsContainer.className = 'movie-cards-container scrollbar';
+    newMovieCardsContainer.style.position = 'relative';
+    newMovieCardsContainer.style.display = 'flex';
+    newMovieCardsContainer.style.overflowX = 'auto';
+    newMovieCardsContainer.style.gap = '1rem';
+    newMovieCardsContainer.style.alignItems = 'center';
 
     // Populate the new row with the movies.
-    movies.slice(0, 4).forEach(movie => {
+    movies.forEach(movie => {
         const newMovieCard = createMovieCard(movie, title === 'Upcoming');
-        newMovieCardsRow.appendChild(newMovieCard);
+        newMovieCardsContainer.appendChild(newMovieCard);
     });
 
-    // Get the container and add the title and the movie row
-    const mainContainer = document.getElementById('movieCardsRow');
-    mainContainer.appendChild(titleElement);
-    mainContainer.appendChild(newMovieCardsRow);
+    // Create buttons to navigate the cards
+    const scrollLeftButton = document.createElement('button');
+    scrollLeftButton.textContent = '<';
+    scrollLeftButton.className = 'scroll-button';
+    scrollLeftButton.style.left = '-50px';
+
+    scrollLeftButton.onclick = () => {
+        
+        const availableWidth = window.innerWidth;
+        const cardWidth = newMovieCardsContainer.querySelector('.col-sm-3')?.offsetWidth + 16 || 316;
+        const cardsInView = Math.floor(availableWidth / cardWidth);
+        const scrollDistance = cardsInView * cardWidth;
+        newMovieCardsContainer.scrollBy({ left: -scrollDistance, behavior: 'smooth' });
+    };
+
+    const scrollRightButton = document.createElement('button');
+    scrollRightButton.textContent = '>';
+    scrollRightButton.className = 'scroll-button';
+    scrollRightButton.style.right = '-50px';
+
+    scrollRightButton.onclick = () => {
+        
+        const availableWidth = window.innerWidth;
+        const cardWidth = newMovieCardsContainer.querySelector('.col-sm-3')?.offsetWidth + 16 || 316;
+        const cardsInView = Math.floor(availableWidth / cardWidth);
+        const scrollDistance = cardsInView * cardWidth;
+        newMovieCardsContainer.scrollBy({ left: scrollDistance, behavior: 'smooth' });
+    };
+
+    // Create a new row container
+    const newRowContainer = document.createElement('div');
+    newRowContainer.className = 'movie-cards-row';
+    newRowContainer.style.position = 'relative';
+
+    // Get the container and add the title, buttons, and the movie row
+    newRowContainer.appendChild(titleElement);
+    newRowContainer.appendChild(scrollLeftButton);
+    newRowContainer.appendChild(scrollRightButton);
+    newRowContainer.appendChild(newMovieCardsContainer);
+
+    const movieContentContainer = document.getElementById('movieContentContainer');
+    movieContentContainer.appendChild(newRowContainer);
 }
 
-window.toggleCategory('all');
+/**
+ * Updates all movie Watch List buttons on the page based on the current state of the Watch List.
+ */
+function updateWatchListButtons() {
+    const movieButtons = document.querySelectorAll('.movie-btn, .watch-later');
+    // watch-later
+
+    movieButtons.forEach(button => {
+        const movieId = parseInt(button.getAttribute('data-id'), 10);
+        const inWatchList = isInWatchList(movieId);
+
+        // Update button text and class based on whether the movie is in the watchlist
+        button.textContent = inWatchList ? 'Remove' : '+ Watch list';
+        if (inWatchList) {
+            button.classList.add('remove');
+        } else {
+            button.classList.remove('remove');
+        }
+    });
+}
+
+// Event listener for the play trailer button
+playTrailerButton?.addEventListener('click', playTrailer);
+loadTopRatedMovies();
+
+toggleCategory('all');
 window.toggleCategory = toggleCategory;
+
+
+//homepage intro splash//
+
+let HomeInIntro = document.querySelector('.home-intro');
+let HomeInLogo = document.querySelector('.home-intro-logo-header');
+let HomeInSpan = document.querySelectorAll('.home-intro-text');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+
+  setTimeout(()=>{
+
+    HomeInSpan.forEach((span, idx)=>{
+      setTimeout(()=>{
+        span.classList.add('active');
+      }, (idx + 1) * 400)
+    });
+
+    setTimeout(()=>{
+      HomeInSpan.forEach((span, idx)=>{
+
+        setTimeout(()=>{
+          span.classList.remove('active');
+          span.classList.add('fade');
+        }, (idx + 1) * 50)
+      })
+    }, 2000);
+
+    setTimeout(()=>{
+      HomeInIntro.style.top = '-100vh';
+    }, 2300)
+
+    
+    setTimeout(()=> {
+        HomeInIntro.style.display = 'none';
+      }, 2800);
+
+  }, 700);//make the start shorter//
+})
