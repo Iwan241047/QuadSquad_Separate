@@ -412,3 +412,148 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
   }, 700);//make the start shorter//
 })
+
+
+/* Genre Filter*/
+
+function toggleGenre(genre) {
+    const genreItems = document.querySelectorAll('.dropdown-item');
+    genreItems.forEach(item => item.classList.remove('active')); // Optional: If you want to indicate the active genre
+
+    // const itemId = genre + 'Item';
+    // document.getElementById(itemId).classList.add('active');
+
+    const genreCardRow = document.getElementById('movieCardsRow');
+    genreCardRow.innerHTML = ''; // Clear previous cards
+
+    switch (genre) {
+        case 'action':
+            window.fetchActionMovies().then(movies => addMoviesToRow('action', movies));
+            break;
+        case 'animation':
+            window.fetchAnimationMovies().then(movies => addMoviesToRow('animation', movies));
+            break;
+        case 'biography':
+            window.fetchBiographyMovies().then(movies => addMoviesToRow('biography', movies));
+            break;
+        case 'crime':
+            window.fetchCrimeMovies().then(movies => addMoviesToRow('crime', movies));
+            break;
+        case 'documentary':
+            window.fetchDocumentaryMovies().then(movies => addMoviesToRow('documentary', movies));
+            break;
+        case 'drama':
+            window.fetchDramaMovies().then(movies => addMoviesToRow('drama', movies));
+            break;
+        case 'fantasy':
+            window.fetchFantasyMovies().then(movies => addMoviesToRow('fantasy', movies));
+            break;
+        case 'horror':
+            window.fetchHorrorMovies().then(movies => addMoviesToRow('horror', movies));
+            break;
+        case 'sci-Fi':
+            window.fetchSciFiMovies().then(movies => addMoviesToRow('sci-Fi', movies));
+            break;
+        case 'thriller':
+            window.fetchThrillerMovies().then(movies => addMoviesToRow('thriller', movies));
+            break;
+        default:
+            window.fetchActionMovies().then(movies => addMoviesToRow('action', movies));
+            window.fetchAnimationMovies().then(movies => addMoviesToRow('animation', movies));
+            window.fetchBiographyMovies().then(movies => addMoviesToRow('biography', movies));
+            window.fetchCrimeMovies().then(movies => addMoviesToRow('crime', movies));
+            window.fetchDocumentaryMovies().then(movies => addMoviesToRow('documentary', movies));
+            window.fetchDramaMovies().then(movies => addMoviesToRow('drama', movies));
+            window.fetchFantasyMovies().then(movies => addMoviesToRow('fantasy', movies));
+            window.fetchHorrorMovies().then(movies => addMoviesToRow('horror', movies));
+            window.fetchSciFiMovies().then(movies => addMoviesToRow('sci-Fi', movies));
+            window.fetchThrillerMovies().then(movies => addMoviesToRow('thriller', movies));
+            break;
+    }
+}
+
+/* Year Filter*/
+
+function toggleYear(year) {
+    const yearItems = document.querySelectorAll('.dropdown-item');
+    yearItems.forEach(item => item.classList.remove('active')); // Optional: If you want to indicate the active genre
+
+    // const itemId = genre + 'Item';
+    // document.getElementById(itemId).classList.add('active');
+
+    const genreCardRow = document.getElementById('movieCardsRow');
+    genreCardRow.innerHTML = ''; // Clear previous cards
+
+    switch (year) {
+        case '1970-1979':
+            window.fetch1970Movies().then(movies => addMoviesToRow('1970-1979', movies));
+            break;
+        case '1980-1989':
+            window.fetch1980Movies().then(movies => addMoviesToRow('1980-1989', movies));
+            break;
+        case '1990-1999':
+            window.fetch1990Movies().then(movies => addMoviesToRow('1990-1999', movies));
+            break;
+        case '2000-2009':
+            window.fetch2000Movies().then(movies => addMoviesToRow('2000-2009', movies));
+            break;
+        case '2010-2019':
+            window.fetch2010Movies().then(movies => addMoviesToRow('2010-2019', movies));
+            break;
+        case '2020-2024':
+            window.fetch2020Movies().then(movies => addMoviesToRow('2020-2024', movies));
+            break;
+        default:
+            window.fetch1970Movies().then(movies => addMoviesToRow('1970-1979', movies));
+            window.fetch1980Movies().then(movies => addMoviesToRow('1980-1989', movies));
+            window.fetch1990Movies().then(movies => addMoviesToRow('1990-1999', movies));
+            window.fetch2000Movies().then(movies => addMoviesToRow('2000-2009', movies));
+            window.fetch2010Movies().then(movies => addMoviesToRow('2010-2019', movies));
+            window.fetch2020Movies().then(movies => addMoviesToRow('2020-2024', movies));
+            break;
+    }
+}
+
+/* Rating Filter*/
+
+function toggleRating(rating) {
+    const ratingItems = document.querySelectorAll('.dropdown-item');
+    ratingItems.forEach(item => item.classList.remove('active')); // Optional: If you want to indicate the active genre
+
+    // const itemId = genre + 'Item';
+    // document.getElementById(itemId).classList.add('active');
+
+    const genreCardRow = document.getElementById('movieCardsRow');
+    genreCardRow.innerHTML = ''; // Clear previous cards
+
+    switch (rating) {
+        case '0-5':
+            window.fetch5Movies().then(movies => addMoviesToRow('0-5', movies));
+            break;
+        case '6-10':
+            window.fetch10Movies().then(movies => addMoviesToRow('6-10', movies));
+            break;
+        default:
+            window.fetch5Movies().then(movies => addMoviesToRow('0-5', movies));
+            window.fetch10Movies().then(movies => addMoviesToRow('6-10', movies));
+            break;
+    }
+}
+
+
+
+
+
+
+
+/* Genre */
+window.toggleGenre('all');
+window.toggleGenre = toggleGenre;
+
+/* Year */
+window.toggleYear('all');
+window.toggleYear = toggleYear;
+
+/* Rating */
+window.toggleRating('all');
+window.toggleRating = toggleRating;
