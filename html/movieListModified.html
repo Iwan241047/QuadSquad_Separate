@@ -191,131 +191,45 @@
         <!-- fhethdfshsssgs -->
 
 
-        <div id="secondCarousel" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="MovieListBody">
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="main-container fluid-container">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators"></div>
+                <div class="carousel-inner"></div>
+                <button id="toggleCarousel" class="btn"><img id="toggleIcon" class="toggle-icon" src="../assets/PauseButton.svg" /></button>
+            </div>
+    
+            <div class="fluid-container main-content-body mt-4">
+                <!-- Select a Trend -->
+                <div class="d-flex justify-content-around mb-4 trend-button-group">
+                    <button id="allButton" class="trend-button active" onclick="window.toggleCategory('all')">All</button>
+                    <button id="popularButton" class="trend-button" onclick="window.toggleCategory('popular')">Popular</button>
+                    <button id="inTheatresButton" class="trend-button" onclick="window.toggleCategory('inTheatres')">In Theatres</button>
+                    <button id="topRatedButton" class="trend-button" onclick="window.toggleCategory('topRated')">Top Rated</button>
+                    <button id="upcomingButton" class="trend-button" onclick="window.toggleCategory('upcoming')">Upcoming</button>
                 </div>
-
-                <div class="carousel-item">
-                    <div class="MovieListBody">
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5 d-flex justify-content-center">
-                            <div class="movie-card2">
-                                <img src="../assets/PLACE HOLDER.png" alt="Movie Poster" class="img-fluid">
-                                <div class="info">
-                                    <h12 class="movie-title">Movie Title</h12>
-                                    <button class="addWatchListBtn">+ Watch list</button>
-                                </div>
-                                <div class="details">
-                                    <span>YEAR</span>
-                                    <span>rating</span>
-                                </div>
-                            </div>
-                        </div>
+    
+                <!-- Categories -->
+                <div class="categories-container pt-4 pb-3 list-container">
+                    <button class="category-button">Action</button>
+                    <button class="category-button">Adventure</button>
+                    <button class="category-button">Animation</button>
+                    <button class="category-button">Biography</button>
+                    <button class="category-button">Crime</button>
+                    <button class="category-button">Documentary</button>
+                    <button class="category-button">Drama</button>
+                    <button class="category-button">Fantasy</button>
+                    <button class="category-button">Horror</button>
+                    <button class="category-button">Sci-Fi</button>
+                    <button class="category-button">Thirller</button> 
+                </div>
+    
+                <!-- Select a Movie -->
+                <div class="container-fluid mt-5 movie-rows">
+                    <div id="movieCardsRow" class="row">
+                        <!-- Movie Cards will be dynamically generated here -->
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#secondCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#secondCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
 
         <div>
             <p class="carouselDescription">Coming Soon</p>
@@ -491,7 +405,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../java/home.js"></script>
-
+    
 </body>
 
 </html>

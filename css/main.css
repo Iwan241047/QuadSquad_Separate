@@ -3,7 +3,7 @@
 .indivContainer{
   display: flex;
   align-items: center;
-  background-color: #232531;
+
   padding-top: 3em;
   padding-left: 4em;
   padding-right: 4em;
@@ -107,458 +107,424 @@
 
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 *{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Poppins", sans-serif;
-width: auto;
-height: auto;
-}
-
-nav {
-margin: 0;
-font-family: Arial, sans-serif;
-
-}
-
-.navbar {
-display: flex;
-align-items: center;
-justify-content: space-between;
-background-color: #23253181;
-padding: 10px 55px;
-}
-
-.navbar .logo {
-display: flex;
-align-items: center;
-}
-
-.navbar .logo img {
-width: auto;
-height: 60px;
-padding-left: 10px;
-}
-
-.navbar a{
-text-align: left;
-}
-
-.nav-links a {
-padding-right: 20px;
-}
-
-.navbar .nav-links a {
-color: #ffffff;
-font-size: 24px;
- font-family: "Poppins", sans-serif;
- font-weight: 300;
- font-style: normal;
- text-decoration: none;
-}
-
-.navbar .nav-links a.active {
-color: #ffffff;
-font-size: 24px;
-font-family: "Poppins", system-ui;
-font-weight: 700;
-font-style: normal;
-text-decoration: none;
-}
-
-.navbar .nav-icons {
-display: flex;
-align-items: center;
-gap: 20px;
-padding-right: 10px;
-}
-
-.navbar .nav-icons i {
-color: white;
-font-size: 20px;
-padding-right: 10px;
-}
-
-.navbar .nav-icons .language {
-font-size: 16px;
-font-weight: bold;
-color: white;
-padding-right: 10px;
-}
-
-.navIconSearch{
-width: 30px;
-height: auto;
-padding-right: 10px;
-}
-
-.navIconProfile{
-width: 30px;
-height: auto; 
-padding-right: 10px;
-}
-
-
-
-.bottemNavbar {
-height: auto;
-display: flex;
-align-items: center;
-justify-content: space-between;
-background-color: #2325315b;
-padding: 10px 55px;
-}
-
-.bottemNavbar .bottemLogo {
-display: flex;
-align-items: center;
-}
-
-.bottemNavbar .bottemLogo img {
-width: auto;
-height: 100px;
-padding-left: 10px;
-}
-
-.bottemNavbar a{
-text-align: left;
-}
-
-.bottemNav-links a {
-padding-right: 20px;
-}
-
-.bottemNavbar .bottemNav-links a {
-color: #ffffff;
-font-size: 24px;
- font-family: "Poppins", sans-serif;
- font-weight: 300;
- font-style: normal;
- text-decoration: none;
-}
-
-.bottemNavbar .bottemNav-links a.active {
-color: #ffffff;
-font-size: 24px;
-font-family: "Poppins", system-ui;
-font-weight: 700;
-font-style: normal;
-text-decoration: none;
-}
-
-.bottemNavbar .bottemNav-icons {
-display: flex;
-align-items: center;
-gap: 20px;
-padding-right: 10px;
-}
-
-.bottemNavbar .bottemNav-icons i {
-color: white;
-font-size: 20px;
-padding-right: 10px;
-}
-
-.bottemNavbar .bottemNav-icons .bottemLanguage {
-font-size: 16px;
-font-weight: bold;
-color: white;
-padding-right: 10px;
-}
-
-.bottemNavIconSearch{
-width: 30px;
-height: auto;
-padding-right: 10px;
-}
-
-.bottemNavIconProfile{
-width: 30px;
-height: auto; 
-padding-right: 10px;
-}
-
-/*ANDRE*/
-/*sign in*/
-
-.sign-inBody{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: url(../assets/lodin\ back.jpg) no-repeat;
-  background-position: center;
-}
-
-  .innerBlock{
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(35, 37, 50, 100);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 30px 40px;
-  }
-
-  .innerBlock .input-box{
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    margin: 30px 0;
-  }
-
-  .innerBlock .signInLogo{
-    display: block;
-    margin-left: 70px;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  .input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    color: #BAB6B6;
-    font-size: 22px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    padding: 20px 45px 20px 20px;
-  }
-  
-
-  .input-box input::placeholder {
-    color: #BAB6B6;
-    font-size: 22px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid rgb(186, 182, 182);
-  }
-
-  .innerBlock .log-in{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 45px;
-    background: #784DF4;
-    border: none;
-    outline: none;
+    font-family: "Poppins", sans-serif;
+    width: auto;
+    height: auto;
+    }
+    
+    nav {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+    }
+    
+    .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-
-  .innerBlock .sign-upLink{
-    color: #333;
-    font-size: 18px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    margin: 20px 0 15px;
-  }
-
-  .sign-upLink p a {
+    justify-content: space-between;
+    background-color: #23253181;
+    padding: 10px 55px;
+    }
+    
+    .navbar .logo {
+    display: flex;
+    align-items: center;
+    }
+    
+    .navbar .logo img {
+    width: auto;
+    height: 60px;
+    padding-left: 10px;
+    }
+    
+    .navbar a{
+    text-align: left;
+    }
+    
+    .nav-links a {
+    padding-right: 20px;
+    }
+    
+    .navbar .nav-links a {
     color: #ffffff;
-    font-size: 18px;
-    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+     font-family: "Poppins", sans-serif;
+     font-weight: 300;
+     font-style: normal;
+     text-decoration: none;
+    }
+    
+    .navbar .nav-links a.active {
+    color: #ffffff;
+    font-size: 24px;
+    font-family: "Poppins", system-ui;
     font-weight: 700;
     font-style: normal;
     text-decoration: none;
-  }
+    }
+    
+    .navbar .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 10px;
+    }
+    
+    .navbar .nav-icons i {
+    color: white;
+    font-size: 20px;
+    padding-right: 10px;
+    }
+    
+    .navbar .nav-icons .language {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-right: 10px;
+    }
+    
+    .navIconSearch{
+    width: 30px;
+    height: auto;
+    padding-right: 10px;
+    }
+    
+    .navIconProfile{
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        padding: 8px 30px;
+        border: none;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: .2s;
+    }
+    
+    
 
-  .sign-upLink p a:hover{
-    text-decoration: underline;
-  }
-  
-  .welcomeHeader{
+
+
+    
+    .bottemNavbar {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2325315b;
+    padding: 10px 55px;
+    }
+    
+    .bottemNavbar .bottemLogo {
+    display: flex;
+    align-items: center;
+    }
+    
+    .bottemNavbar .bottemLogo img {
+    width: auto;
+    height: 100px;
+    padding-left: 10px;
+    }
+    
+    .bottemNavbar a{
+    text-align: left;
+    }
+    
+    .bottemNav-links a {
+    padding-right: 20px;
+    }
+    
+    .bottemNavbar .bottemNav-links a {
     color: #ffffff;
-    font-size: 40px;
-    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+     font-family: "Poppins", sans-serif;
+     font-weight: 300;
+     font-style: normal;
+     text-decoration: none;
+    }
+    
+    .bottemNavbar .bottemNav-links a.active {
+    color: #ffffff;
+    font-size: 24px;
+    font-family: "Poppins", system-ui;
     font-weight: 700;
     font-style: normal;
-    text-align: center;
-  }
+    text-decoration: none;
+    }
+    
+    .bottemNavbar .bottemNav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 10px;
+    }
+    
+    .bottemNavbar .bottemNav-icons i {
+    color: white;
+    font-size: 20px;
+    padding-right: 10px;
+    }
+    
+    .bottemNavbar .bottemNav-icons .bottemLanguage {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-right: 10px;
+    }
+    
+    .bottemNavIconSearch{
+    width: 30px;
+    height: auto;
+    padding-right: 10px;
+    }
+    
+    .bottemNavIconProfile{
+    width: 30px;
+    height: auto; 
+    padding-right: 10px;
+    }
 
-  .logInBtnText{
+    /*sign in*/
+
+.form-cotainer{
+    display: flex;
+    width: 450px;
+    height: 600px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;  
+}
+
+.form-col{
+    position: relative;
+    width: 100%;
+     overflow: hidden; 
+}
+
+.btn-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+
+.btn-box .btn{
     color: #ffffff;
-    font-size: 22px;
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .2s;
+}    
+
+.btn-box .btn-1{
+    background: #21264D;
+}
+.btn-1:hover{
+    opacity: 0.85;
+}
+
+.form-box{
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+    transition: .3s;
+}
+
+.login-form{
+    left: 50%;
+}
+
+.register-form{
+    left: -50%;
+}
+
+.regster-form .form-title{
+    margin-block: 40px 20px;
+}
+
+.form-inputs{
+    width: 100%;
+}
+
+.form-title{
+    margin: 40px 0;
+    color: #fff;
+    font-size: 28px;
+    font-family: "poppins", sans-serif;
+    font-weight: 600;
+}
+
+
+.input-box{
+    position: relative;
+}
+
+.inputs{
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-field{
+    font-size: 16px;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
     font-style: normal;
-  }
+    padding: 0 40px 0 20px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    backdrop-filter: blur(20px);
+}
 
+::placeholder{
+    color: #fff;
+    font-size: 16px;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+}
 
+.input-box .icon{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+}
 
+.strenght-bar{
+    position: absolute;
+    top: 82%;
+    right: 16%;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 300px;
+    height: 20px;
+}
 
-       /*sign up*/
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #21264D;
+    cursor: pointer;
+    transform: .8s;
+}
+.submit-btn:hover{
+background: #333d88;
+}
 
-       .sign-upBody{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          background: url(../assets/lodin\ back.jpg) no-repeat;
-          background-position: center;
-          width: auto;
-          height: a;
-        }
-  
-        .signUpText{
-          color: #ffffff;
-          font-size: 40px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 600;
-          font-style: normal;
-          display: flex;
-          justify-content: center;
-          text-align: center;
-        }
-  
-       .innerBlock .input-boxSignUp{
-          width: 100%;
-          height: 50px;
-          background: transparent;
-          margin: 30px 0;
-        }
-        
-       .input-boxSignUp input{
-          width: 100%;
-          height: 100%;
-          background: transparent;
-          border: none;
-          outline: none;
-          border-radius: 40px;
-          color: #BAB6B6;
-          font-size: 22px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 400;
-          font-style: normal;
-          padding: 20px 45px 20px 20px;
-        }
-        
-      
-        .input-boxSignUp input::placeholder {
-          color: #BAB6B6;
-          font-size: 22px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 400;
-          font-style: normal;
-          box-sizing: border-box;
-          border: none;
-          border-bottom: 2px solid rgb(186, 182, 182);
-        }
-  
-        .innerBlock .signUp{
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 50%;
-          height: 45px;
-          background: #784DF4;
-          border: none;
-          outline: none;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-  
-        .SignUpBtnText{
-          color: #ffffff;
-          font-size: 22px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 700;
-          font-style: normal;
-        }
+.messageDiv{
+    background-color: #21264D;
+    color:#fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+}
 
         /*WATCH LIST*/
 
         .WatchListBody{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      
-          background: url(../assets/lodin\ back.jpg) no-repeat;
-          background-position: center;
-          height: auto;
-          width: auto;
-        }
-
-        h12{
-          color: #ffffff;
-          font-size: 24px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 400;
-          font-style: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            background: url(../assets/lodin\ back.jpg) no-repeat;
+            background-position: center;
+            height: auto;
+            width: auto;
           }
-
-        .movie-card {
-          width: 400px;
-          height: auto;
-          margin: 10px;
-          border: 1px ;
-          border-radius: 10px;
-          overflow: hidden;
-          background-color: #23253181;
-          color: white;
-          position: relative;
-          border: 2px solid rgba(35, 37, 50, 100);
-          
-      }
-
-      .movie-card img {
-          width: 100%;
-          height: auto;
-          background-color: #f8d5d5;
-          object-fit: cover;
-          border-bottom: 2px solid rgba(35, 37, 50, 100) ;
-      }
-
-      .movie-card .info {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 15px;
-        font-size: 0.85rem;
-        text-align: center;
-      }
-
-      .remove-btn {
-          background-color: #c1f700;
-          border: none;
-          padding: 5px 10px;
-          font-weight: bold;
-          border-radius: 20px;
-          cursor: pointer;
-          color: #333;
-          font-size: 16px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 300;
-          font-style: normal;
-      }
-
-      .details {
+  
+          h12{
+            color: #ffffff;
+            font-size: 24px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+  
+          .movie-card {
+            width: 400px;
+            height: auto;
+            margin: 10px;
+            border: 1px ;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #23253181;
+            color: white;
+            position: relative;
+            border: 2px solid rgba(35, 37, 50, 100);
+            
+        }
+  
+        .movie-card img {
+            width: 100%;
+            height: auto;
+            background-color: #f8d5d5;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(35, 37, 50, 100) ;
+        }
+  
+        .movie-card .info {
           display: flex;
           justify-content: space-between;
           padding: 10px 15px;
           font-size: 0.85rem;
-          color: #ffffff;
-          font-size: 16px;
-          font-family: "Poppins", sans-serif;
-          font-weight: 300;
-          font-style: normal;
-      }
+          text-align: center;
+        }
+  
+        .remove-btn {
+            background-color: #c1f700;
+            border: none;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #333;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+  
+        .details {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
 
-  /* MovieList CSS */
+       /* MovieList CSS */
 
 .section1{
   background: url(../assets/lodin\ back.jpg) no-repeat; 
@@ -606,8 +572,584 @@ padding-right: 10px;
   padding-top: 50px;
 }
 
+
+/* Bianca Styling - Home.html */
+html {
+  height: 100%;
+}
+
+body.mainPage {
+  font-family: Arial, sans-serif;
+  background: #232531;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Poppins;
+}
+
+.mainPage .header a {
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 24px;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  color: white;
+  font-size: 24px;
+  word-wrap: break-word;
+}
+
+.mainPage .header a.active {
+  font-weight: 700;
+}
+
+.mainPage .user-options {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.mainPage .user-options a {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+.mainPage .movie-banner {
+  background-color: #d9d9d9;
+  height: 400px;
+  position: relative;
+}
+
+.mainPage .movie-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+.mainPage .movie-title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.mainPage .buttons-container {
+  margin-top: 20px;
+}
+
+.mainPage .watch-button, .mainPage .watchlist-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.mainPage .watch-button {
+  background-color: #9d41f2;
+  color: #fff;
+}
+
+.mainPage .watchlist-button {
+  background-color: #b6e336;
+  color: #000;
+}
+
+.mainPage .categories-container {
+  position: relative;
+  overflow: auto;
+  white-space: nowrap;
+  border-top: 1px solid white;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+/* Custom Scrollbar! */
+.mainPage .categories-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.mainPage .categories-container::-webkit-scrollbar-track {
+  background: #232531;
+}
+
+.mainPage .categories-container::-webkit-scrollbar-thumb {
+  background: #445921;
+  border-radius: 10px;
+}
+
+.mainPage .categories-container::-webkit-scrollbar-thumb:hover {
+  background: #AEF504;
+}
+/* End Custom Scrollbar! */
+
+.mainPage .category-button {
+  margin: 10px;
+}
+
+.mainPage .category-button {
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px 12px;
+  width: 270px;
+  height: 60px;
+  border-radius: 100px;
+  background: rgba(174, 245, 4, 0.50);
+  align-content: center;
+  border: none;
+}
+
+.mainPage .category-button:hover {
+  background: #AEF504;
+}
+
+.mainPage .carousel {
+  display: flex;
+  overflow: auto;
+  gap: 10px;
+  height: calc(100vh - 128px);
+}
+
+.mainPage .carousel-item {
+  color: #FFF;
+  background-color: #020433;
+  width: 100%;
+  margin: auto;
+  height: calc(100vh - 128px);
+}
+
+.mainPage #toggleCarousel {
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  z-index: 10;
+}
+
+.mainPage .toggle-icon {
+  height: 130px;
+  width: 130px;
+}
+
+.mainPage .item-container {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5%;
+}
+
+.mainPage .card-body {
+  position: relative;
+  text-align: left;  
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0px;
+}
+
+.mainPage .carousel-indicators [data-bs-target] {
+  background-color: black;
+  width: 125px;
+  height: 5px;
+}
+
+.mainPage .movie-title {
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.mainPage .movie-rating {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.mainPage .movie-duration {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.mainPage .movie-description {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mainPage .trend-button-group button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 24px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.mainPage .movie-button-group {
+  margin-top: 86px;
+}
+
+.mainPage .watch-now {
+  color: white;
+  background-color: #784DF4;
+  width: 270px;
+  height: 65px;
+  border-radius: 5px;
+  border: none;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+}
+
+.mainPage .watch-later {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+  border: none;
+  width: 269px;
+  height: 65px;
+  border-radius: 5px;
+  background: #AEF504;
+  margin-left: 20px;
+}
+
+.mainPage .main-content-body {
+  margin: 50px 100px;
+}
+
+.mainPage .category-title {
+  border-bottom: 1px solid white;
+}
+
+/* Reset styling for some components */
+.mainPage .movie-rows, .mainPage .category-title, .mainPage .movie-cards-row {
+  padding: 0px;
+}
+
+.mainPage .movie-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px 50px 0px;
+}
+
+.mainPage .movie-cards-row .col-md-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainPage .movie-cards-row .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #505365;
+  color: white;
+  text-align: center;
+}
+
+.mainPage .movie-cards-row .card img {
+  max-height: 588px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mainPage #movieCardsRow {
+  margin: 0px;
+  width: 100%;
+}
+
+.mainPage .list-container > :first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.mainPage .list-container > :last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.mainPage .trend-button-group button.active {
+  color: white;
+  font-weight: 700;
+}
+
+.mainPage .category-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.mainPage .movie-cards-row .card-title {
+  max-width: calc(100% - 180px);
+  line-height: 1.2em;
+  min-height: 2.4em;
+}
+
+.mainPage .movie-cards-row .movie-btn {
+  border-radius: 100px;
+  border: none;
+  background: #784DF4;
+  display: flex;
+  width: 180px;
+  height: 50px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  right: 0.5rem;
+  top: 0.6rem;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.section1{
+  background: url(../assets/lodin\ back.jpg) no-repeat; 
+  padding-bottom: 50px;
+}
+
+.MovieListBody{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  height: auto;
+  width: auto;
+  margin-top: -30px;
+}
+
+.line{
+    margin: 0px 90px;
+    height: 5px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.addWatchListBtn {
+  background-color: #784DF4;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.carouselDescription {
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.movie-card2 {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  border: 1px ;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #23253181;
+  color: white;
+  position: relative;
+  border: 2px solid rgba(35, 37, 50, 100);
+  
+}
+
+.movie-card2 img {
+  width: 100%;
+  height: auto;
+  background-color: #f8d5d5;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(35, 37, 50, 100) ;
+}
+
+.movie-card2 .info {
+display: flex;
+justify-content: space-between;
+padding: 10px 15px;
+font-size: 0.85rem;
+text-align: center;
+}
+
+.dropdown {
+  
+}
+
+.dropdown button {
+  color: #ffffff;
+  background-color:#9d41f2;
+  margin-right: 10px;
+}
+
+.dropdown button:hover {
+  color:#000000;
+  background-color:#AEF504;
+}
+
+.dropdown-item {
+
+}
+
+.flexContainer1 {
+  max-height: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: center;
+    justify-content: right;
+    align-items: center;
+    align-content: space-around;
+}
+
 /* 
 
-*/
+.section1{
+  background: url(../assets/lodin\ back.jpg) no-repeat; 
+  padding-bottom: 50px;
+}
 
+.MovieListBody{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  height: auto;
+  width: auto;
+  margin-top: -30px;
+}
+
+.line{
+    margin: 0px 90px;
+    height: 5px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.addWatchListBtn {
+  background-color: #784DF4;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.carouselDescription {
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.movie-card2 {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  border: 1px ;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #23253181;
+  color: white;
+  position: relative;
+  border: 2px solid rgba(35, 37, 50, 100);
+  
+}
+
+.movie-card2 img {
+  width: 100%;
+  height: auto;
+  background-color: #f8d5d5;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(35, 37, 50, 100) ;
+}
+
+.movie-card2 .info {
+display: flex;
+justify-content: space-between;
+padding: 10px 15px;
+font-size: 0.85rem;
+text-align: center;
+}
+
+.dropdown {
+  
+}
+
+.dropdown button {
+  color: #ffffff;
+  background-color:#9d41f2;
+  margin-right: 10px;
+}
+
+.dropdown button:hover {
+  color:#000000;
+  background-color:#AEF504;
+}
+
+.dropdown-item {
+
+}
+
+.flexContainer1 {
+  max-height: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: center;
+    justify-content: right;
+    align-items: center;
+    align-content: space-around;
+}
+
+*/
 
