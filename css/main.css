@@ -1065,7 +1065,7 @@ body.mainPage {
 
 .mainPage .watch-button, .mainPage .watchlist-button {
   padding: 10px 20px;
-  border: none;
+  border: none;carousel
   cursor: pointer;
   font-size: 16px;
   margin-right: 10px;
@@ -1544,7 +1544,21 @@ body.mainPage {
 }
 
 .dropdown-item {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+}
 
+.dropdown-item :active {
+  background:#9d41f2;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
 }
 
 .flexContainer1 {
