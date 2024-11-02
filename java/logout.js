@@ -46,7 +46,7 @@ import{getFirestore, getDoc, doc} from "https://www.gstatic.com/firebasejs/11.0.
   })
 
 
-  const logoutButton=document.getElementById('logout');
+  const logoutButton=document.getElementById('authButton');
 
   logoutButton.addEventListener('click',()=>{
     localStorage.removeItem('loggedInUserId');
@@ -58,5 +58,3 @@ import{getFirestore, getDoc, doc} from "https://www.gstatic.com/firebasejs/11.0.
         console.error('Error Signing out:', error);
     })
   })
-
-  console.log(loggedUserUsername);
