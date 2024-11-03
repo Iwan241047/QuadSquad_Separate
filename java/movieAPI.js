@@ -1,5 +1,3 @@
-
-
 // Easier for Visual Studio to work with:
 /**
  * @typedef {Object} MovieDetails
@@ -82,6 +80,7 @@ const fetchMovies = async (url, category) => {
     }
 };
 
+
 /**
  * Fetch upcoming movies.
  * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
@@ -119,13 +118,16 @@ const fetchPremiereMovies = async () => {
 };
 
 // Expose functions globally so they can be called from HTML
+
+
+
 /**
  * MovieList
  * Fetch action movies.
  * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
  */
 const fetchActionMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28';
     return await fetchMovies(url, 'Action');
 };
 
@@ -134,7 +136,7 @@ const fetchActionMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
  */
 const fetchAnimationMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=16';
     return await fetchMovies(url, 'Animation');
 };
 
@@ -143,7 +145,7 @@ const fetchAnimationMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
  */
 const fetchBiographyMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36';
     return await fetchMovies(url, 'Biography');
 };
 
@@ -152,7 +154,7 @@ const fetchBiographyMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of crime movie details.
  */
 const fetchCrimeMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=80';
     return await fetchMovies(url, 'Crime');
 };
 
@@ -161,7 +163,7 @@ const fetchCrimeMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of documentary movie details.
  */
 const fetchDocumentaryMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=99';
     return await fetchMovies(url, 'Documentary');
 };
 
@@ -170,7 +172,7 @@ const fetchDocumentaryMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of drama movie details.
  */
 const fetchDramaMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=18';
     return await fetchMovies(url, 'Drama');
 };
 
@@ -179,7 +181,7 @@ const fetchDramaMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of fantasy movie details.
  */
 const fetchFantasyMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=14';
     return await fetchMovies(url, 'Fantasy');
 };
 
@@ -188,7 +190,7 @@ const fetchFantasyMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of horror movie details.
  */
 const fetchHorrorMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27';
     return await fetchMovies(url, 'Horror');
 };
 
@@ -197,7 +199,7 @@ const fetchHorrorMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of sci-fi movie details.
  */
 const fetchSciFiMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=878';
     return await fetchMovies(url, 'Sci-Fi');
 };
 
@@ -206,7 +208,7 @@ const fetchSciFiMovies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of thriller movie details.
  */
 const fetchThrillerMovies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=53';
     return await fetchMovies(url, 'Thriller');
 };
 
@@ -226,7 +228,7 @@ window.fetchThrillerMovies = fetchThrillerMovies;
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 1970-1979.
  */
 const fetch1970Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=popularity.desc&release_date.gte=1970-01-01&release_date.lte=1979-12-31';
     return await fetchMovies(url, '1970-1979');
 };
 
@@ -235,7 +237,7 @@ const fetch1970Movies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 1980-1989.
  */
 const fetch1980Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=popularity.desc&release_date.gte=1980-01-01&release_date.lte=1989-12-31';
     return await fetchMovies(url, '1980-1989');
 };
 
@@ -244,7 +246,7 @@ const fetch1980Movies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 1990-1999.
  */
 const fetch1990Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=popularity.desc&release_date.gte=1990-01-01&release_date.lte=1999-12-31';
     return await fetchMovies(url, '1990-1999');
 };
 
@@ -253,7 +255,7 @@ const fetch1990Movies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2000-2009.
  */
 const fetch2000Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=popularity.desc&release_date.gte=2000-01-01&release_date.lte=2009-12-31';
     return await fetchMovies(url, '2000-2009');
 };
 
@@ -262,7 +264,7 @@ const fetch2000Movies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2010-2019.
  */
 const fetch2010Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=popularity.desc&release_date.gte=2010-01-01&release_date.lte=2019-12-31';
     return await fetchMovies(url, '2010-2019');
 };
 
@@ -271,7 +273,7 @@ const fetch2010Movies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2020-2024.
  */
 const fetch2020Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&sort_by=popularity.desc&release_date.gte=2020-01-01&release_date.lte=2024-12-31';
     return await fetchMovies(url, '2020-2024');
 };
 
@@ -288,7 +290,7 @@ window.fetch2020Movies = fetch2020Movies;
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2010-2019.
  */
 const fetch5Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&vote_average.gte=0&vote_average.lte=5';
     return await fetchMovies(url, '0-5');
 };
 
@@ -297,7 +299,7 @@ const fetch5Movies = async () => {
  * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2020-2024.
  */
 const fetch10Movies = async () => {
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&vote_average.gte=5&vote_average.lte=10';
     return await fetchMovies(url, '6-10');
 };
 
